@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Aeroxpert Software - Desarrollo de Software Institucional</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        
         :root {
             --primary-color: #333;
             --secondary-color: #eb780df4;
@@ -25,6 +25,7 @@
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4 {
@@ -33,9 +34,10 @@
         }
         
         .container {
-            width: 85%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         
         /* Header */
@@ -56,10 +58,17 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
         }
         
         .logo span {
@@ -69,10 +78,11 @@
         .nav-links {
             display: flex;
             list-style: none;
+            transition: all 0.3s ease;
         }
         
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         .nav-links a {
@@ -80,12 +90,18 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
         
         .nav-links a:hover {
             color: var(--secondary-color);
         }
         
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
         
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
@@ -106,13 +122,13 @@
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             color: white;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 2rem;
         }
@@ -121,12 +137,13 @@
             display: inline-block;
             background-color: var(--secondary-color);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.3s;
-            margin: 0 0.5rem;
+            margin: 0.5rem;
+            font-size: 0.95rem;
         }
         
         .btn:hover {
@@ -143,50 +160,48 @@
             color: var(--primary-color);
         }
         
-        
         section {
-            padding: 5rem 0;
+            padding: 4rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
         }
         
-       
         .services {
             background-color: var(--light-color);
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
         
         .service-card {
             background-color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
         
         .service-card h3 {
             margin-bottom: 1rem;
             color: var(--secondary-color);
+            font-size: 1.2rem;
         }
-        
         
         footer {
             background-color: var(--primary-color);
             color: white;
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             text-align: center;
         }
         
@@ -195,15 +210,17 @@
             justify-content: center;
             list-style: none;
             margin: 1rem 0;
+            flex-wrap: wrap;
         }
         
         .footer-links li {
-            margin: 0 1rem;
+            margin: 0 0.8rem;
         }
         
         .footer-links a {
             color: white;
             text-decoration: none;
+            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -211,51 +228,142 @@
         }
         
         .copyright {
-            margin-top: 2rem;
-            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
             color: rgba(255,255,255,0.7);
         }
-       
-.whatsapp-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 999;
-    background-color: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-}
-
-.whatsapp-button img {
-    width: 40px;
-    height: 40px;
-}
-
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero {
+                padding: 7rem 0 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            #contacto > .container > div {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .service-card {
+                padding: 1.2rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .whatsapp-button img {
+                width: 25px;
+                height: 25px;
+            }
+        }
     </style>
 </head>
 <body>
-    
     <header>
         <div class="container">
             <nav>
-              <a href="#" class="logo">
-  <img src="https://i.imgur.com/1AMipb9.jpeg" alt="AeroXpert Logo" style="height: 40px;">
-</a>
-
+                <a href="#" class="logo">
+                    <img src="https://i.imgur.com/1AMipb9.jpeg" alt="AeroXpert Logo">
+                    <span>Aero</span>xpert
+                </a>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
@@ -267,17 +375,17 @@
         </div>
     </header>
 
-   
     <section class="hero" id="inicio">
         <div class="container hero-content">
             <h1>Software Personalizado para Explotadores de Drones (UAS) y Centros de Formación Aeronáutica</h1>
             <p>Desarrollamos software que potencia la eficiencia de tu organización con soluciones seguras, escalables y adaptadas a tus necesidades específicas.</p>
-            <a href="#servicios" class="btn">Conoce nuestros productos</a>
-            <a href="#contacto" class="btn btn-outline">Contacto</a>
+            <div>
+                <a href="#servicios" class="btn">Conoce nuestros productos</a>
+                <a href="#contacto" class="btn btn-outline">Contacto</a>
+            </div>
         </div>
     </section>
 
-    
     <section id="nosotros">
         <div class="container">
             <h2 class="section-title">Sobre Nosotros</h2>
@@ -293,7 +401,6 @@
         </div>
     </section>
 
-   
     <section class="services" id="servicios">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
@@ -314,28 +421,27 @@
         </div>
     </section>
 
-    
     <section id="tecnologias">
         <div class="container">
             <h2 class="section-title">Tecnologías que Utilizamos</h2>
             <div style="text-align: center; max-width: 900px; margin: 0 auto;">
                 <p style="margin-bottom: 2rem;">Utilizamos las mejores tecnologías del mercado para garantizar soluciones robustas y mantenibles:</p>
                 
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;">
-                    <div style="background: var(--light-color); padding: 1rem; border-radius: 5px; min-width: 120px;">
-                        <p style="font-weight: 600; color: var(--secondary-color);">Java</p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="background: var(--light-color); padding: 0.8rem; border-radius: 5px; min-width: 100px;">
+                        <p style="font-weight: 600; color: var(--secondary-color); font-size: 0.9rem;">Java</p>
                     </div>
-                    <div style="background: var(--light-color); padding: 1rem; border-radius: 5px; min-width: 120px;">
-                        <p style="font-weight: 600; color: var(--secondary-color);">.NET</p>
+                    <div style="background: var(--light-color); padding: 0.8rem; border-radius: 5px; min-width: 100px;">
+                        <p style="font-weight: 600; color: var(--secondary-color); font-size: 0.9rem;">.NET</p>
                     </div>
-                    <div style="background: var(--light-color); padding: 1rem; border-radius: 5px; min-width: 120px;">
-                        <p style="font-weight: 600; color: var(--secondary-color);">Python</p>
+                    <div style="background: var(--light-color); padding: 0.8rem; border-radius: 5px; min-width: 100px;">
+                        <p style="font-weight: 600; color: var(--secondary-color); font-size: 0.9rem;">Python</p>
                     </div>
-                    <div style="background: var(--light-color); padding: 1rem; border-radius: 5px; min-width: 120px;">
-                        <p style="font-weight: 600; color: var(--secondary-color);">SQL Server</p>
+                    <div style="background: var(--light-color); padding: 0.8rem; border-radius: 5px; min-width: 100px;">
+                        <p style="font-weight: 600; color: var(--secondary-color); font-size: 0.9rem;">SQL Server</p>
                     </div>
-                    <div style="background: var(--light-color); padding: 1rem; border-radius: 5px; min-width: 120px;">
-                        <p style="font-weight: 600; color: var(--secondary-color);">React</p>
+                    <div style="background: var(--light-color); padding: 0.8rem; border-radius: 5px; min-width: 100px;">
+                        <p style="font-weight: 600; color: var(--secondary-color); font-size: 0.9rem;">React</p>
                     </div>
                 </div>
                 
@@ -344,11 +450,10 @@
         </div>
     </section>
 
-    
     <section id="contacto" style="background-color: var(--light-color);">
         <div class="container">
             <h2 class="section-title">Contacto</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
                 <div>
                     <h3 style="margin-bottom: 1.5rem; color: var(--secondary-color);">Información de Contacto</h3>
                     <p style="margin-bottom: 1rem;"><strong>Email:</strong> aeroxpertsofware@hotmail.com</p>
@@ -374,10 +479,9 @@
         </div>
     </section>
 
-    
     <footer>
         <div class="container">
-            <a href="#" class="logo" style="font-size: 1.5rem;">Aero<span>xpert</span> Software</a>
+            <a href="#" class="logo" style="font-size: 1.3rem;">Aero<span>xpert</span> Software</a>
             <ul class="footer-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
@@ -388,10 +492,44 @@
             <p class="copyright">© 2025 Aeroxpert Software. Todos los derechos reservados.</p>
         </div>
 
-       
-<a href="https://wa.me/573004763159" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+        <a href="https://wa.me/573004763159" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
     </footer>
+
+    <script>
+        // Menú hamburguesa
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling para todos los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
